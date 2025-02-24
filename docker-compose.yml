@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # Service pour l'API
+  api:
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "3000:3000"  # Expose le port 3000 de l'API
+    volumes:
+      - .:/app  # Monte le code source dans le conteneur
+    depends_on:
+      - db  # Dépend de la base de données
+
+  # Service pour la base de données (exemple avec PostgreSQL)
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: strongman
+    ports:
+      - "5432:5432"  # Expose le port 5432 de la base de données
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persiste les données de la base
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@armstrong.com  # Email de connexion à pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: password        # Mot de passe de connexion à pgAdmin
+    ports:
+      - "5050:80"  # Expose pgAdmin sur le port 5050
+    depends_on:
+      - db 
+# Volume pour persister les données de la base de données
+volumes:
+  postgres_data:

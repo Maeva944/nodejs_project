@@ -1,0 +1,24 @@
+{
+  "name": "arm_strong",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "1. Téléchargez et installez [Docker Desktop](https://www.docker.com/) en fonction de votre système d'exploitation.  \r 2. Lancez Docker et assurez-vous qu'il fonctionne correctement.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "next": "^15.1.7",
+    "pg": "^8.13.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {}
+}
