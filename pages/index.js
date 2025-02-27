@@ -9,6 +9,8 @@ export default function Home() {
         <h1>Bienvenue dans notre Salle de Sport</h1>
         <p>Rejoignez-nous et atteignez vos objectifs de fitness avec nos coachs expérimentés.</p>
         <button onClick={() => router.push('/abonnements')}>Voir les abonnements</button>
+        <button onClick={() => router.push('/login')}>Connexion</button>
+        <button onClick={() => router.push('/register')}>Inscription</button>
       </header>
 
       <section className="features">
