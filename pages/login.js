@@ -25,8 +25,8 @@ export default function Login() {
     const data = await response.json();
 
     if (response.ok) {
-      localStorage.setItem("token", data.token); // Stocker le token
-      router.push("/"); // Redirection vers l'accueil après connexion
+      localStorage.setItem("token", data.token);
+      router.push("/"); 
     } else {
       alert("Identifiants incorrects. Essayez à nouveau.");
     }
