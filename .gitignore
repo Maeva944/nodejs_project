@@ -1,3 +1,32 @@
+# Charger le contenu des deux fichiers .gitignore en tant que chaînes
+gitignore_1 = """
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+"""
+
+gitignore_2 = """
 # Logs
 logs
 *.log
@@ -136,3 +165,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+"""
+
+# Compter les lignes dans chaque .gitignore
+lines_gitignore_1 = len(gitignore_1.strip().split("\n"))
+lines_gitignore_2 = len(gitignore_2.strip().split("\n"))
+
+# Total des lignes
+total_lines = lines_gitignore_1 + lines_gitignore_2
+total_lines
+
