@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"  # Expose le port 3000
     volumes:
-      - .:/app  # Monte le code source dans le conteneur
+      - .:/backend
     environment:
       NODE_ENV: production
     command: sh -c "npm run build && npm start"

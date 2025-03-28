@@ -1,6 +1,6 @@
 # Étape 1 : Construire l'application
 FROM node:18 AS builder
-WORKDIR /app
+WORKDIR /backend
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
@@ -9,6 +9,6 @@ RUN npm run build
 # Étape 2 : Exécuter l'application en production
 FROM node:18
 WORKDIR /app
-COPY --from=builder /app ./
+COPY --from=builder /backend ./
 EXPOSE 3000
 CMD ["npm", "run", "start"]
